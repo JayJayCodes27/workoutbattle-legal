@@ -1,0 +1,67 @@
+:root {
+  --ink: #f7f8f4;
+  --muted: #a9ada7;
+  --line: #2b312d;
+  --panel: #151917;
+  --ground: #0b0e0c;
+  --lime: #c8ff38;
+  --blue: #49a5ff;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: radial-gradient(circle at 90% -10%, rgba(200, 255, 56, .09), transparent 30rem), var(--ground);
+  color: var(--ink);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.6;
+}
+a { color: inherit; }
+.site-shell { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
+.brand-bar { min-height: 92px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--line); }
+.brand { font-weight: 900; letter-spacing: .06em; text-decoration: none; }
+.status-chip, .eyebrow, .card-number, .doc-meta { color: var(--lime); font-size: .76rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+.status-chip { border: 1px solid #53651f; border-radius: 99px; padding: 7px 12px; }
+.hero { padding: clamp(72px, 12vw, 150px) 0 clamp(64px, 9vw, 110px); max-width: 940px; }
+.hero h1, .document-header h1 { margin: 18px 0 24px; max-width: 1000px; font-size: clamp(3rem, 7.8vw, 6.9rem); line-height: .94; letter-spacing: -.065em; }
+.lede { max-width: 720px; color: #c7cbc5; font-size: clamp(1.1rem, 2.2vw, 1.45rem); }
+.document-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.document-card { min-height: 320px; padding: 30px; border: 1px solid var(--line); border-radius: 24px; background: linear-gradient(145deg, #181d19, #111411); text-decoration: none; display: grid; grid-template-columns: 1fr auto; align-content: space-between; transition: transform .2s ease, border-color .2s ease; }
+.document-card:hover { transform: translateY(-4px); border-color: #647833; }
+.document-card .card-number { grid-column: 1 / -1; }
+.document-card h2 { margin: 0 0 8px; font-size: clamp(1.7rem, 3vw, 2.5rem); letter-spacing: -.04em; }
+.document-card p { margin: 0; color: var(--muted); max-width: 430px; }
+.arrow { align-self: end; color: var(--lime); font-size: 2.2rem; }
+.trust-strip { margin-top: 80px; display: grid; grid-template-columns: repeat(3, 1fr); border-block: 1px solid var(--line); }
+.trust-strip div { padding: 28px 24px; border-right: 1px solid var(--line); display: grid; gap: 5px; }
+.trust-strip div:last-child { border-right: 0; }
+.trust-strip strong { font-size: .78rem; color: var(--blue); letter-spacing: .1em; }
+.trust-strip span { color: var(--muted); font-size: .94rem; }
+footer { min-height: 110px; display: flex; align-items: center; justify-content: space-between; color: var(--muted); font-size: .9rem; }
+footer a { color: var(--ink); }
+.document-page { padding-bottom: 80px; }
+.document-header { padding: clamp(64px, 10vw, 120px) 0 55px; border-bottom: 1px solid var(--line); }
+.document-header h1 { font-size: clamp(3.5rem, 8vw, 7rem); }
+.document-header .summary { max-width: 760px; font-size: 1.2rem; color: #c7cbc5; }
+.back-link { color: var(--lime); text-decoration: none; font-weight: 800; }
+.doc-layout { display: grid; grid-template-columns: 240px minmax(0, 720px); gap: 70px; padding: 60px 0; }
+.toc { position: sticky; top: 28px; align-self: start; display: grid; gap: 12px; }
+.toc a { color: var(--muted); text-decoration: none; font-size: .9rem; }
+.toc a:hover { color: var(--lime); }
+.legal-copy section { scroll-margin-top: 30px; padding-bottom: 44px; }
+.legal-copy h2 { margin: 0 0 12px; font-size: 1.55rem; letter-spacing: -.025em; }
+.legal-copy h3 { margin: 25px 0 8px; font-size: 1.05rem; }
+.legal-copy p, .legal-copy li { color: #c2c6c0; }
+.legal-copy ul { padding-left: 20px; }
+.legal-copy a { color: var(--lime); }
+.notice { border-left: 3px solid var(--lime); background: var(--panel); padding: 18px 20px; border-radius: 0 12px 12px 0; }
+@media (max-width: 760px) {
+  .site-shell { width: min(100% - 28px, 1120px); }
+  .document-grid, .trust-strip { grid-template-columns: 1fr; }
+  .trust-strip div { border-right: 0; border-bottom: 1px solid var(--line); }
+  .trust-strip div:last-child { border-bottom: 0; }
+  .doc-layout { grid-template-columns: 1fr; gap: 35px; padding-top: 40px; }
+  .toc { position: static; border-bottom: 1px solid var(--line); padding-bottom: 30px; }
+  footer { align-items: flex-start; justify-content: center; flex-direction: column; gap: 8px; }
+}
